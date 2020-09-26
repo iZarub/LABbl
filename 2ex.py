@@ -8,7 +8,6 @@ screen = pygame.display.set_mode((800, 600))
 pygame.draw.rect(screen, (117, 187, 253), (0, 0, 800, 600))
 pygame.draw.rect(screen, (0, 187, 0), (0, 350, 800, 600))
 pygame.draw.rect(screen, (101, 67, 33), (100, 260, 300, 200))
-
 pygame.draw.rect(screen, (52, 28, 2), (203, 312, 95, 95))
 pygame.draw.rect(screen, (0, 0, 150), (210, 320, 80, 80))
 pygame.draw.line(screen, (0, 0, 0), [250, 320], [250, 400], 5)
@@ -37,7 +36,9 @@ tr(650, 350)
 tr(550, 350)
 tr(630, 310)
 tr(580, 310)
-pygame.draw.circle(screen, (255, 255, 0), (700, 100), 50)
+for i in range(37):
+    c = i * np.pi / 36
+    polygon(screen, (255, 255, 0),[(int(700 + 50 * np.cos(c)), int(100 - 50 * np.sin(c))), (int(700 + 50 * np.cos(np.pi * 2 / 3 + c)), int(100 - 50 * np.sin(np.pi * 2 / 3 + c))), (int(700 + 50 * np.cos(np.pi * 4 / 3 + c)), int(100 - 50 * np.sin(np.pi * 4 / 3 + c)))])
 
 
 

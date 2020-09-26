@@ -26,7 +26,9 @@ for x in range(200, 360, 40):
 for x in range(230, 310, 40):
     ob(x, 40, 40)
 
-pygame.draw.circle(screen, (255, 255, 0), (70, 70), 60)
+for i in range(37):
+    c = i * np.pi / 36
+    polygon(screen, (255, 255, 0),[(int(70 + 70 * np.cos(c)), int(100 - 70 * np.sin(c))), (int(70 + 70 * np.cos(np.pi * 2 / 3 + c)), int(100 - 70 * np.sin(np.pi * 2 / 3 + c))), (int(70 + 70 * np.cos(np.pi * 4 / 3 + c)), int(100 - 70 * np.sin(np.pi * 4 / 3 + c)))])
 
 pygame.draw.rect(screen, (101, 67, 33), (100, 260, 300, 200))
 pygame.draw.rect(screen, (52, 28, 2), (203, 312, 95, 95))
