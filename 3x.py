@@ -23,9 +23,12 @@ for x in range(520, 600, 30):
     ob(x, 180, 20)
 for x in range(200, 360, 40):
     ob(x, 70, 40)
-for x in range(230, 310, 40):
+for x in range(230, 320, 40):
     ob(x, 40, 40)
 
+
+ob(570, 70, 40)
+ob(620, 50, 40)
 for i in range(37):
     c = i * np.pi / 36
     polygon(screen, (255, 255, 0),[(int(70 + 70 * np.cos(c)), int(100 - 70 * np.sin(c))), (int(70 + 70 * np.cos(np.pi * 2 / 3 + c)), int(100 - 70 * np.sin(np.pi * 2 / 3 + c))), (int(70 + 70 * np.cos(np.pi * 4 / 3 + c)), int(100 - 70 * np.sin(np.pi * 4 / 3 + c)))])
@@ -63,17 +66,11 @@ for y in range(320, 410, 40):
 for y in range(320, 410, 40):
     tr(1080, y, 30)
 
-
-
-
-
-
-
-
-
-
-
-
+pygame.draw.line(screen, (0, 0, 0), (750, 700), (750, 600), 9)
+for y in range(600,660, 20):
+    tr(760, y , 15)
+for y in range(600, 660, 20):
+    tr(740, y, 15)
 
 
 
