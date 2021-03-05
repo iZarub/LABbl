@@ -1,0 +1,91 @@
+#include <iostream>
+using std::cin;
+using std::cout;
+using std::endl;
+
+int main(){
+   
+    int N, M, K, k, n, m;
+    cin >> N >> M >> k;
+    int* a1 = (int*)malloc(k * sizeof(int));
+    int* a2 = (int*)malloc(k * sizeof(int));
+    for (int i = 0; i < k; ++i) {
+        cin >> n;
+        a1[i] = n;
+        cin >> m;
+        a2[i] = m;
+    
+    }
+
+    int** arr = new int* [N+2]; 
+    for (int i = 0; i < N+2; ++i) {
+        arr[i] = new int[M+2]; 
+    }
+
+
+
+    for (int j = 0; j < M+2; ++j) {
+        for (int i = 0; i < N + 2; ++i) {
+            arr[i][j] = 0;
+        }
+    }
+
+    for (int i = 0; i < k; ++i) {
+        arr[a1[i]][a2[i]] = -1;
+    }
+
+    for (int j = 1; j <= M; ++j) {
+        for (int i = 1; i <= N; ++i) {
+            if (arr[i][j] != -1) {
+
+
+                if (arr[i + 1][j + 1] == -1) {
+                    arr[i][j] = arr[i][j] + 1;
+                }
+                if (arr[i + 1][j - 1] == -1) {
+                    arr[i][j] = arr[i][j] + 1;
+                }
+                if (arr[i - 1][j - 1] == -1) {
+                    arr[i][j] = arr[i][j] + 1;
+                }
+                if (arr[i - 1][j + 1] == -1) {
+                    arr[i][j] = arr[i][j] + 1;
+                }
+                if (arr[i + 1][j] == -1) {
+                    arr[i][j] = arr[i][j] + 1;
+                }
+                if (arr[i - 1][j] == -1) {
+                    arr[i][j] = arr[i][j] + 1;
+                }
+                if (arr[i][j - 1] == -1) {
+                    arr[i][j] = arr[i][j] + 1;
+                }
+                if (arr[i][j + 1] == -1) {
+                    arr[i][j] = arr[i][j] + 1;
+                }
+            }
+            
+              
+            
+        }
+
+    }
+
+    for (int j = 1; j < N+1; ++j) { 
+        for (int i = 1; i < M+1; ++i) {
+            cout << arr[j][i] << " ";
+        }
+        
+         cout << '\n';
+        
+    }
+    for (int i = 0; i < N+2 ; ++i) {
+        delete[] arr[i];
+    
+    }
+    delete[] arr;
+    free(a1);
+    free(a2);
+
+    return 0;
+}
